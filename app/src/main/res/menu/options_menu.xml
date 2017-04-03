@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="accion"
+        android:id="@+id/mFavoritos"
+        android:icon="@android:drawable/btn_star"
+        app:showAsAction="always"
+        >
+    </item>
+
+    <item
+        android:title="@string/mabout"
+        android:id="@+id/mAbout">
+
+    </item>
+
+    <item
+        android:title="@string/mContacto"
+        android:id="@+id/mContacto">
+
+    </item>
+
+</menu>

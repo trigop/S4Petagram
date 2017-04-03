@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">S4Petagram</string>
+    <string name="mabout">Acerca de</string>
+    <string name="mContacto">Contacto</string>
+    <string name="pet_name_dummy">Strhok Yuldo</string>
+    <string name="pet_like_count_dummy">5</string>
+    <string name="contactLabel">Contacto</string>
+    <string name="aboutLabel">Acerca de ..</string>
+    <string name="about_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ipsum
+        velit, lacinia at dolor id, scelerisque luctus arcu. Donec consectetur, neque sit amet
+        pulvinar finibus, felis elit tristique urna, bibendum suscipit nunc lacus eu arcu. In
+        venenatis non erat a feugiat. Praesent vel lorem quis ligula dignissim ultrices. In blandit
+        enim placerat, imperdiet nisl ullamcorper, mollis risus. Nunc eu porttitor libero. Nunc a
+        tincidunt eros. Ut sollicitudin eu dolor nec auctor. Donec elementum malesuada quam, in
+        sagittis arcu accumsan sagittis.  Nam placerat sodales tortor sit amet consectetur. Aenean
+        ornare, nisi id maximus iaculis, nisl purus fringilla massa, in tristique lorem lorem ac
+        justo. Quisque ultrices tortor felis, et porttitor turpis imperdiet ornare. Maecenas ac
+        sollicitudin nunc. Nam eget ex urna. Curabitur ut turpis nec magna fermentum dapibus in
+        id nibh. Vivamus a diam nec mi tempus lacinia a eu lorem. Suspendisse potenti. Sed sit amet
+        sollicitudin leo.
+
+        cumsan sagittis.  Nam placerat sodales tortor sit amet consectetur. Aenean
+        ornare, nisi id maximus iaculis, nisl purus fringilla massa, in tristique lorem lorem ac
+        justo. Quisque ultrices tortor felis, et porttitor turpis imperdiet ornare. Maecenas ac
+        sollicitudin nunc. Nam
+        cumsan sagittis.  Nam placerat sodales tortor sit amet consectetur. Aenean
+        ornare, nisi id maximus iaculis, nisl purus fringilla massa, in tristique lorem lorem ac
+        justo. Quisque ultrices tortor felis, et porttitor turpis imperdiet ornare. Maecenas ac
+        sollicitudin nunc. Nam
+
+         enim placerat, imperdiet nisl ullamcorper, mollis risus. Nunc eu porttitor libero. Nunc a
+        tincidunt eros. Ut sollicitudin eu dolor nec auctor. Donec elementum malesuada quam, in
+        sagittis arcu accumsan sagittis.  Nam placerat sodales tortor sit amet consectetur. Aenean
+        ornare, nisi id maximus iaculis, nisl purus fringilla massa, in tristique lorem lorem ac
+        justo. Quisque ultrices tortor felis, et porttitor turpis imperdiet ornare. Maecenas ac
+        sollicitudin nunc. Nam eget ex urna. Curabitur ut turpis nec magna fermentum dapibus in
+        id nibh. Vivamus a diam nec mi tempus lacinia a eu lorem. Suspendisse potenti. Sed sit amet
+        sollicitudin leo. FIN
+
+    </string>
+    <string name="mascotasFavLabel">Mascotas Favoritas!</string>
+    <string name="contact_hint_name">nombre</string>
+    <string name="contact_hint_email">email</string>
+    <string name="contact_hint_body">Mensaje</string>
+    <string name="text_button_sendemail">Enviar mail</string>
+</resources>
