@@ -34,13 +34,27 @@
 
 
     <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/viewPager"
+        android:layout_marginLeft="@dimen/padding_activity"
+        android:layout_marginRight="@dimen/padding_activity"
+        android:layout_marginTop="@dimen/padding_activity"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     </android.support.v4.view.ViewPager>
 
+    <android.support.design.widget.FloatingActionButton
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="@dimen/padding_activity"
+        android:layout_marginBottom="@dimen/padding_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/camara"
+        android:id="@+id/fabTakePhoto"
+
+
+        />
 
 
 </android.support.design.widget.CoordinatorLayout>

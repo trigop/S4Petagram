@@ -3,4 +3,6 @@
     <dimen name="margin_btn_like">10dp</dimen>
     <dimen name="tvCountLikeText">20sp</dimen>
     <dimen name="padding_activity">16dp</dimen>
+    <dimen name="perfil_img_width">120dp</dimen>
+    <dimen name="perfil_name_size">20sp</dimen>
 </resources>
