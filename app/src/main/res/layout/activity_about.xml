@@ -23,7 +23,10 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/mascota2"/>
+                android:src="@drawable/mascota2"
+                app:layout_collapseMode="parallax"
+                android:fitsSystemWindows="true"
+                />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolBarNoFragment"
