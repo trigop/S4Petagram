@@ -17,6 +17,7 @@ import es.tamareo.s4petagram.activity.AboutActivity;
 import es.tamareo.s4petagram.activity.ContactoActivity;
 import es.tamareo.s4petagram.activity.MascotasFavoritasActivity;
 import es.tamareo.s4petagram.adapter.PageAdapter;
+import es.tamareo.s4petagram.db.BaseDatos;
 import es.tamareo.s4petagram.fragment.PerfilFragment;
 import es.tamareo.s4petagram.fragment.RecyclerViewFragment;
 
@@ -104,6 +105,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent ii = new Intent(this, MascotasFavoritasActivity.class);
                 startActivity(ii);
                 break;
+
+            case R.id.mDBDelete:
+                Toast.makeText(this, "Borramos BBDD", Toast.LENGTH_SHORT).show();
+                BaseDatos baseDatos = new BaseDatos(getApplicationContext());
+                baseDatos.borrarBBDD();
 
         }
 

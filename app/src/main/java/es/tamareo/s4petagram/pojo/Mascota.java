@@ -9,7 +9,9 @@ public class Mascota {
     private int img;
     private String name;
     private int counter;
+    private int id;
 
+    public Mascota(){}
 
     public Mascota(String name, int img, int counter) {
         this.img = img;
@@ -41,5 +43,14 @@ public class Mascota {
     public void setCounter(int counter) {
         this.counter += counter;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
 }

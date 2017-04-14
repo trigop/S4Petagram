@@ -1,10 +1,12 @@
 package es.tamareo.s4petagram.activity;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
@@ -12,13 +14,17 @@ import java.util.ArrayList;
 import es.tamareo.s4petagram.R;
 import es.tamareo.s4petagram.adapter.MascotaAdapter;
 import es.tamareo.s4petagram.pojo.Mascota;
+import es.tamareo.s4petagram.presentador.IMascotasFavoritasPresenter;
+import es.tamareo.s4petagram.presentador.MascotasFavoritasPresenter;
 
-public class MascotasFavoritasActivity extends AppCompatActivity {
+public class MascotasFavoritasActivity extends AppCompatActivity implements IMascotasFavoritasView{
 
     ArrayList<Mascota> mascotas;
     private RecyclerView recyclerView;
     private ImageButton imageButton;
     private Toolbar toolbar;
+    private IMascotasFavoritasPresenter presenter;
+    //private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,24 +45,27 @@ public class MascotasFavoritasActivity extends AppCompatActivity {
         }
 
         recyclerView = (RecyclerView) findViewById(R.id.rvFavList);
+        //TODO: REVISAR
+        presenter = new MascotasFavoritasPresenter(this, getApplicationContext());
+
 
 
         //Generamos el Layout como lo necesitamos. En este caso como Linear
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        //LinearLayoutManager llm = new LinearLayoutManager(this);
+        //llm.setOrientation(LinearLayoutManager.VERTICAL);
 
         //Añaidmos al recyclerView el Layout definido
-        recyclerView.setLayoutManager(llm);
+        //recyclerView.setLayoutManager(llm);
 
-        initMascotas();
-        initAdaptador();
+        //initMascotas();
+        //initAdaptador();
 
     }
 
 
     //Iniciamos el adaptador y añadimos al recyclerView el adaptador creado
     private void initAdaptador() {
-        MascotaAdapter mascotaAdapter = new MascotaAdapter(mascotas, this);
+        MascotaAdapter mascotaAdapter = new MascotaAdapter(mascotas, this, getApplicationContext());
         recyclerView.setAdapter(mascotaAdapter);
     }
 
@@ -74,4 +83,24 @@ public class MascotasFavoritasActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void generarLinearLayoutVertical() {
+        Log.i("LOG", "LOG");
+        LinearLayoutManager llm = new LinearLayoutManager(this);
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        Log.i("LOG", "LOG");
+        recyclerView.setLayoutManager(llm);
+    }
+
+    @Override
+    public MascotaAdapter crearAdaptador(ArrayList<Mascota> mascotas) {
+        Log.i("LOG", "LOG");
+        MascotaAdapter adapter = new MascotaAdapter(mascotas, this, getApplicationContext());
+        return adapter;
+    }
+
+    @Override
+    public void inicializarAdaptadorRV(MascotaAdapter adapter) {
+        recyclerView.setAdapter(adapter);
+    }
 }

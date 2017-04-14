@@ -22,4 +22,10 @@
 
     </item>
 
+    <item
+        android:title="@string/mDBDelete"
+        android:id="@+id/mDBDelete">
+
+    </item>
+
 </menu>

@@ -55,7 +55,7 @@ public class RecyclerViewFragment extends Fragment {
 
     //Iniciamos el adaptador y añadimos al recyclerView el adaptador creado
     private void initAdaptador() {
-        MascotaAdapter mascotaAdapter = new MascotaAdapter(mascotas, getActivity());
+        MascotaAdapter mascotaAdapter = new MascotaAdapter(mascotas, getActivity(), getContext());
         recyclerView.setAdapter(mascotaAdapter);
     }
 

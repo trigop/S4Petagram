@@ -1,6 +1,7 @@
 package es.tamareo.s4petagram.adapter;
 
 import android.app.Activity;
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import es.tamareo.s4petagram.R;
+import es.tamareo.s4petagram.db.BaseDatos;
+import es.tamareo.s4petagram.db.ConstructorMascotas;
 import es.tamareo.s4petagram.pojo.Mascota;
 
 /**
@@ -23,10 +26,13 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
 
     ArrayList<Mascota> mascotas;
     Activity activity;
+    ConstructorMascotas constructorMascotas;
+    Context context;
 
-    public MascotaAdapter(ArrayList<Mascota> mascotas, Activity activity) {
+    public MascotaAdapter(ArrayList<Mascota> mascotas, Activity activity, Context context) {
         this.mascotas = mascotas;
         this.activity = activity;
+        this.context = context;
     }
 
 
@@ -54,6 +60,11 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
                 mascota.setCounter(1);
                 mascotaViewHolder.petLikeCount.setText(Integer.toString(mascota.getCounter()));
                 Toast.makeText(activity, "Like mascota: "+ mascota.getName(), Toast.LENGTH_SHORT).show();
+
+                BaseDatos db = new BaseDatos(context);
+
+                ConstructorMascotas.insertarMascota(db, mascota);
+
             }
         });
 
