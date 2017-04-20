@@ -14,6 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import es.tamareo.s4petagram.activity.AboutActivity;
+import es.tamareo.s4petagram.activity.ConfiguracionActivity;
 import es.tamareo.s4petagram.activity.ContactoActivity;
 import es.tamareo.s4petagram.activity.MascotasFavoritasActivity;
 import es.tamareo.s4petagram.adapter.PageAdapter;
@@ -110,6 +111,13 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Borramos BBDD", Toast.LENGTH_SHORT).show();
                 BaseDatos baseDatos = new BaseDatos(getApplicationContext());
                 baseDatos.borrarBBDD();
+                break;
+
+            case R.id.mConfig:
+                Intent iii = new Intent(this, ConfiguracionActivity.class);
+                startActivity(iii);
+                break;
+
 
         }
 

@@ -28,4 +28,10 @@
 
     </item>
 
+    <item
+        android:title="@string/mConfig"
+        android:id="@+id/mConfig">
+
+    </item>
+
 </menu>
