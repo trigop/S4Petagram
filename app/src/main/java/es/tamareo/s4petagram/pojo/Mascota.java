@@ -6,26 +6,17 @@ package es.tamareo.s4petagram.pojo;
 
 public class Mascota {
 
-    private int img;
+    private String urlImg;
     private String name;
-    private int counter;
-    private int id;
+    private int likes = 0;
+    private String id;
 
-    public Mascota(){}
-
-    public Mascota(String name, int img, int counter) {
-        this.img = img;
-        this.name = name;
-        this.counter = counter;
+    public String getUrlImg() {
+        return urlImg;
     }
 
-
-    public int getImg() {
-        return img;
-    }
-
-    public void setImg(int img) {
-        this.img = img;
+    public void setUrlImg(String urlImg) {
+        this.urlImg = urlImg;
     }
 
     public String getName() {
@@ -36,21 +27,28 @@ public class Mascota {
         this.name = name;
     }
 
-    public int getCounter() {
-        return counter;
+    public int getLikes() {
+        return likes;
     }
 
-    public void setCounter(int counter) {
-        this.counter += counter;
+    public void setLikes(int likes) {
+        this.likes = likes;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
+    public Mascota(){}
 
+
+    public Mascota(String urlImg, String name, int likes) {
+        this.urlImg = urlImg;
+        this.name = name;
+        this.likes = likes;
+    }
 }

@@ -24,7 +24,7 @@ public class MascotasFavoritasPresenter implements IMascotasFavoritasPresenter{
     public MascotasFavoritasPresenter(IMascotasFavoritasView iMascotasFavoritasView, Context context){
         this.iMascotasFavoritasView = iMascotasFavoritasView;
         this.context = context;
-        obetenerMascotasBaseDatos();
+        //obetenerMascotasBaseDatos();
 
     }
 
@@ -42,6 +42,15 @@ public class MascotasFavoritasPresenter implements IMascotasFavoritasPresenter{
     public void mostrarMascotasFavoritasRV() {
         iMascotasFavoritasView.inicializarAdaptadorRV(iMascotasFavoritasView.crearAdaptador(mascotas));
         iMascotasFavoritasView.generarLinearLayoutVertical();
+
+    }
+
+    @Override
+    public void obtenerMediosRecientes() {
+
+
+
+
 
     }
 }

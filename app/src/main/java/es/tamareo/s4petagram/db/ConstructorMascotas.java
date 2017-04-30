@@ -34,7 +34,7 @@ public class ConstructorMascotas {
         ContentValues contentValues = new ContentValues();
 
         contentValues.put(ConstantesBaseDatos.TABLE_MASCOTAS_NAME, mascota.getName());
-        contentValues.put(ConstantesBaseDatos.TABLE_MASCOTAS_IMG, mascota.getImg());
+        //contentValues.put(ConstantesBaseDatos.TABLE_MASCOTAS_IMG, mascota.getImg());
 
         db.insertarMascota(contentValues);
     }

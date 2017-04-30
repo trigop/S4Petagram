@@ -70,10 +70,10 @@ public class BaseDatos extends SQLiteOpenHelper {
         while (registros.moveToNext()){
 
             Mascota mascotaActual = new Mascota();
-            mascotaActual.setId(registros.getInt(0));
+            //mascotaActual.setId(registros.getInt(0));
             mascotaActual.setName(registros.getString(1));
-            mascotaActual.setImg(registros.getInt(2));
-            mascotaActual.setCounter(0);
+            //mascotaActual.setImg(registros.getInt(2));
+            //mascotaActual.setCounter(0);
 
             mascotas.add(mascotaActual);
 

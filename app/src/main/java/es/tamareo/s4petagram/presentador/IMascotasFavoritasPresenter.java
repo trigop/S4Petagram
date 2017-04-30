@@ -8,5 +8,6 @@ public interface IMascotasFavoritasPresenter {
 
     public void obetenerMascotasBaseDatos();
     public void mostrarMascotasFavoritasRV();
+    void obtenerMediosRecientes();
 
 }

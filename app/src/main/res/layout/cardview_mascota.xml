@@ -24,61 +24,32 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:orientation="horizontal"
-            android:padding="5dp">
+            android:padding="5dp"
+            >
 
             <LinearLayout
-                android:layout_width="250dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
 
-                <ImageButton
-                    android:id="@+id/btnPetLike"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margin_btn_like"
-                    android:layout_marginRight="@dimen/margin_btn_like"
-                    android:background="@color/white"
-                    android:src="@drawable/hueso" />
-
-                <TextView
-                    android:id="@+id/petName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="@string/pet_name_dummy"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="30dp"
                     android:text="@string/pet_like_count_dummy"
                     android:textSize="@dimen/tvCountLikeText"
                     android:textStyle="bold"
                     android:id="@+id/petLikeCount"
-
-
                     />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
                     android:src="@drawable/hueso_relleno" />
 
-            </RelativeLayout>
-
+            </LinearLayout>
 
         </LinearLayout>
 

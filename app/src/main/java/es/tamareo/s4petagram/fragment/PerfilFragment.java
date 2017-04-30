@@ -18,15 +18,18 @@ import es.tamareo.s4petagram.R;
 import es.tamareo.s4petagram.adapter.MascotaAdapter;
 import es.tamareo.s4petagram.adapter.MascotaAdapterTeaser;
 import es.tamareo.s4petagram.pojo.Mascota;
+import es.tamareo.s4petagram.presentador.IMascotasPresenter;
+import es.tamareo.s4petagram.presentador.MascotasPresenter;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PerfilFragment extends Fragment {
+public class PerfilFragment extends Fragment implements IRecyclerViewFragment {
 
-    TextView textView;
-    ImageView imageView;
-    RecyclerView recyclerView;
+    private TextView textView;
+    private ImageView imageView;
+    private RecyclerView recyclerView;
+    private IMascotasPresenter presenter;
 
     ArrayList<Mascota> mascotas;
 
@@ -49,13 +52,14 @@ public class PerfilFragment extends Fragment {
         imageView.setImageResource(R.drawable.mascota3);
 
         recyclerView = (RecyclerView) v.findViewById(R.id.rvMiMascotas);
+        presenter = new MascotasPresenter(this, getContext());
 
-        GridLayoutManager glm = new GridLayoutManager(getActivity(), 3);
-        recyclerView.setLayoutManager(glm);
+        //GridLayoutManager glm = new GridLayoutManager(getActivity(), 3);
+        //recyclerView.setLayoutManager(glm);
 
 
-        initMascotas();
-        initAdaptador();
+        //initMascotas();
+        //initAdaptador();
 
 
         return v;
@@ -73,7 +77,7 @@ public class PerfilFragment extends Fragment {
     //Inicializamos el contenido. Creamos un array con las mascotas
     public void initMascotas(){
 
-        mascotas = new ArrayList<>();
+        /*mascotas = new ArrayList<>();
         mascotas.add(new Mascota("Mascota 6", R.drawable.mascota6, 10));
         mascotas.add(new Mascota("Mascota 5", R.drawable.mascota5, 8));
         mascotas.add(new Mascota("Mascota 4", R.drawable.mascota4, 3));
@@ -84,9 +88,34 @@ public class PerfilFragment extends Fragment {
         mascotas.add(new Mascota("Mascota 8", R.drawable.mascota2, 2));
         mascotas.add(new Mascota("Mascota 9", R.drawable.mascota1, 1));
         mascotas.add(new Mascota("Mascota 10", R.drawable.mascota6, 0));
-        mascotas.add(new Mascota("Mascota 11", R.drawable.mascota4, 2));
+        mascotas.add(new Mascota("Mascota 11", R.drawable.mascota4, 2));*/
 
     }
 
 
+    @Override
+    public void generarLinearLayoutVertical() {
+        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+
+        //GridLayoutManager llm = new GridLayoutManager(this, 2);
+        recyclerView.setLayoutManager(llm);
+    }
+
+    @Override
+    public MascotaAdapter crearAdaptador(ArrayList<Mascota> mascotas) {
+        MascotaAdapter adapter = new MascotaAdapter(mascotas, getActivity(), getContext());
+        return adapter;
+    }
+
+    @Override
+    public void inicializarAdaptadorRV(MascotaAdapter adaptador) {
+        recyclerView.setAdapter(adaptador);
+    }
+
+    @Override
+    public void generarGridLayout() {
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        recyclerView.setLayoutManager(gridLayoutManager);
+    }
 }

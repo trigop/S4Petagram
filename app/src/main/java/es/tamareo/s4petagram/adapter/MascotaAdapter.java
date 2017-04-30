@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 import es.tamareo.s4petagram.R;
@@ -48,25 +50,19 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
     @Override
     public void onBindViewHolder(final MascotaViewHolder mascotaViewHolder, int position) {
         final Mascota mascota = mascotas.get(position);
-        mascotaViewHolder.petName.setText(mascota.getName());
-        mascotaViewHolder.petImg.setImageResource(mascota.getImg());
-        mascotaViewHolder.petLikeCount.setText(Integer.toString(mascota.getCounter()));
+        //mascotaViewHolder.petName.setText(mascota.getName());
+        //mascotaViewHolder.petImg.setImageResource(mascota.getImg());
+        Picasso.with(activity)
+                .load(mascota.getUrlImg())
+                .placeholder(R.drawable.ic_home)
+                .into(mascotaViewHolder.petImg);
+
+        mascotaViewHolder.petLike.setText(Integer.toString(mascota.getLikes()) + " likes");
+
 
         //TODO: HACER ALCO CUANDO PULSAMOS EN LA ACTIVIDAD
 
-        mascotaViewHolder.petBtnLike.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mascota.setCounter(1);
-                mascotaViewHolder.petLikeCount.setText(Integer.toString(mascota.getCounter()));
-                Toast.makeText(activity, "Like mascota: "+ mascota.getName(), Toast.LENGTH_SHORT).show();
 
-                BaseDatos db = new BaseDatos(context);
-
-                ConstructorMascotas.insertarMascota(db, mascota);
-
-            }
-        });
 
     }
 
@@ -77,17 +73,13 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
     public static class MascotaViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView petImg;
-        private TextView petName;
-        private ImageButton petBtnLike;
-        private TextView petLikeCount;
+        private TextView petLike;
 
         public MascotaViewHolder(View itemView) {
             super(itemView);
 
             petImg = (ImageView) itemView.findViewById(R.id.petImg);
-            petName = (TextView) itemView.findViewById(R.id.petName);
-            petBtnLike = (ImageButton) itemView.findViewById(R.id.btnPetLike);
-            petLikeCount = (TextView) itemView.findViewById(R.id.petLikeCount);
+            petLike = (TextView) itemView.findViewById(R.id.petLikeCount);
         }
     }
 

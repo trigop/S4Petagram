@@ -73,13 +73,13 @@ public class MascotasFavoritasActivity extends AppCompatActivity implements IMas
     //Inicializamos el contenido. Creamos un array con las mascotas
     public void initMascotas(){
 
-        mascotas = new ArrayList<>();
+        /*mascotas = new ArrayList<>();
         mascotas.add(new Mascota("Mascota 6", R.drawable.mascota6, 0));
         mascotas.add(new Mascota("Mascota 5", R.drawable.mascota5, 0));
         mascotas.add(new Mascota("Mascota 4", R.drawable.mascota4, 0));
         mascotas.add(new Mascota("Mascota 3", R.drawable.mascota3, 0));
         mascotas.add(new Mascota("Mascota 2", R.drawable.mascota2, 0));
-        mascotas.add(new Mascota("Mascota 1", R.drawable.mascota1, 0));
+        mascotas.add(new Mascota("Mascota 1", R.drawable.mascota1, 0));*/
 
     }
 
